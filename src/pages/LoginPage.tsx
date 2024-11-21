@@ -1,7 +1,19 @@
 import backgroundImage from '@/assets/backgroundImage.svg'; // 새로운 배경 이미지를 import합니다.
 import babyImage from '@/assets/babyImage.svg'; // 아기 이미지를 import합니다.
+import { useNavigate } from 'react-router-dom';
+
 
 function LoginPage() {
+
+  const navigate = useNavigate(); 
+  const handleNavigate = () => {
+
+    //로그인 성공 시 mainpage로 이동
+    navigate('/'); 
+  }
+
+
+
   return (
     <div
       className="flex flex-col items-center justify-center h-screen w-screen"
@@ -57,7 +69,8 @@ function LoginPage() {
       </div>
       {/* 로그인 버튼 */}
       <div className="mb-6 w-full max-w-xs" style={{ position: 'relative', zIndex: 1 }}>
-        <button className="w-full p-3 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-700">
+        <button onClick={handleNavigate} className="w-full p-3 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-700">
+
           로그인
         </button>
       </div>
