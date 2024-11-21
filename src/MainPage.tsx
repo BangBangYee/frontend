@@ -1,9 +1,9 @@
 import React from 'react';
-import crawlingBabyImage from './assets/crawlingBabyImage.svg'; // 아기 기어다니는 사진을 import합니다.
-import sleepingBabyImage from './assets/sleepingBabyImage.svg'; // 아기 자는 사진을 import합니다.
-import supermanBabyImage from './assets/supermanBabyImage.svg'; // 아기 슈퍼맨 사진을 import합니다.
-import cameraIcon from './assets/cameraIcon.svg'; // 카메라 아이콘을 import합니다.
-import myPageIcon from './assets/myPageIcon.svg'; // 마이페이지 아이콘을 import합니다.
+import crawlingBabyImage from './assets/crawlingBabyImage.svg'; 
+import sleepingBabyImage from './assets/sleepingBabyImage.svg'; 
+import supermanBabyImage from './assets/supermanBabyImage.svg'; 
+import cameraIcon from './assets/cameraIcon.svg'; 
+import myPageIcon from './assets/myPageIcon.svg'; 
 
 function MainPage() {
   return (
