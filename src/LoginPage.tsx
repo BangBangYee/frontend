@@ -1,6 +1,6 @@
 import React from 'react';
-import backgroundImage from './assets/backgroundImage.svg'; // 새로운 배경 이미지를 import합니다.
-import babyImage from './assets/babyImage.svg'; // 아기 이미지를 import합니다.
+import backgroundImage from './assets/backgroundImage.svg'; 
+import babyImage from './assets/babyImage.svg'; 
 
 function LoginPage() {
   return (
