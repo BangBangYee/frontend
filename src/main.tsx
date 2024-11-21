@@ -6,7 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import LoginPage from '@/pages/LoginPage.tsx';
 import MainPage from '@/pages/MainPage.tsx';
-import MyPage from '@/pages/MyPage';
+import MyPage from '@/pages/MyPage.tsx';
+import InsitePage from '@/pages/InsightPage.tsx';
 
 const routesConfig = [
   {
@@ -20,6 +21,10 @@ const routesConfig = [
   {
     path: '/mypage',
     element: <MyPage />,
+  },
+  {
+    path: '/insight',
+    element: <InsitePage />,
   },
 ];
 
