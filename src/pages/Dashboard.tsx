@@ -21,9 +21,11 @@ const Dashboard = () => {
       <div className="flex justify-center mb-5">
         <button className='w-[45%] drop-shadow-lg m-1 mr-4'>
           <img className='w-full' src={RecordButton}/>
+          {/* 버튼 활성화 - 앱 구동 시 구현  src={RecordButtonActive} */}
         </button>
         <button className='w-[45%] drop-shadow-lg m-1 ml-4'>
           <img className='w-full' src={SongButton}/>
+          {/* 버튼 활성화 - 앱 구동 시 구현  src={SongButtonActive} */}
         </button>
       </div>
       <div className="flex items-center justify-between bg-white rounded-3xl p-5 shadow-md mb-5">
