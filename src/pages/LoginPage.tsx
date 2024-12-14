@@ -100,13 +100,13 @@ function LoginPage() {
           로그인
         </button>
       </div>
-      {/* 시작하기 링크 */}
+      {/* 회원가입 링크 */}
       <div className="text-center w-full max-w-xs" style={{ position: 'relative', zIndex: 1 }}>
         <a
           href="/sign"
           className="text-sm text-green-500 hover:underline"
         >
-          시작하기
+          회원가입
         </a>
       </div>
     </div>
