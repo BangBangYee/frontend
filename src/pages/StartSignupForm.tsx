@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SignupForm: React.FC = () => {
@@ -6,7 +6,21 @@ const SignupForm: React.FC = () => {
   const [birthDate, setBirthDate] = useState('');
   const [momPhone, setMomPhone] = useState('010-');
   const [dadPhone, setDadPhone] = useState('010-');
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // 이름, 생일, 전화번호 중 하나라도 빈 값이면 버튼 비활성화
+    if (
+      name.trim() &&
+      birthDate.trim() &&
+      (momPhone !== '010-' || dadPhone !== '010-')
+    ) {
+      setIsButtonEnabled(true);
+    } else {
+      setIsButtonEnabled(false);
+    }
+  }, [name, birthDate, momPhone, dadPhone]);
 
   const handlePhoneInput = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -61,9 +75,8 @@ const SignupForm: React.FC = () => {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="우리 아이 이름"
+            placeholder="김딩글"
             style={{ width: '100%', padding: '10px', marginTop: '5px' }}
-            required
           />
         </div>
         <div style={{ marginBottom: '15px' }}>
@@ -74,7 +87,6 @@ const SignupForm: React.FC = () => {
             value={birthDate}
             onChange={(e) => setBirthDate(e.target.value)}
             style={{ width: '100%', padding: '10px', marginTop: '5px' }}
-            required
           />
         </div>
         <div style={{ marginBottom: '15px' }}>
@@ -86,7 +98,6 @@ const SignupForm: React.FC = () => {
             onChange={(e) => handlePhoneInput(e, setMomPhone)}
             placeholder="010-"
             style={{ width: '100%', padding: '10px', marginTop: '5px' }}
-            required
           />
         </div>
         <div style={{ marginBottom: '15px' }}>
@@ -98,19 +109,19 @@ const SignupForm: React.FC = () => {
             onChange={(e) => handlePhoneInput(e, setDadPhone)}
             placeholder="010-"
             style={{ width: '100%', padding: '10px', marginTop: '5px' }}
-            required
           />
         </div>
         <button
           type="submit"
+          disabled={!isButtonEnabled}
           style={{
             width: '100%',
             padding: '10px',
-            backgroundColor: '#4caf50',
-            color: '#fff',
+            backgroundColor: isButtonEnabled ? '#4caf50' : '#ccc',
+            color: isButtonEnabled ? '#fff' : '#666',
             border: 'none',
             borderRadius: '5px',
-            cursor: 'pointer',
+            cursor: isButtonEnabled ? 'pointer' : 'not-allowed',
           }}
         >
           Next
